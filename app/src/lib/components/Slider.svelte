@@ -49,7 +49,7 @@
       style="left: {((value - min) / (max - min)) * 100}%"
     />
   </div>
-  <div class="win95-border-inset px-2 py-0.5 min-w-[50px] text-center font-windows text-sm">
+  <div class="win95-border-inset px-2 py-0.5 min-w-[50px] text-center font-ms-sans text-sm">
     {value}
   </div>
 </div>

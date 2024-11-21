@@ -39,11 +39,11 @@
 </script>
 
 <main 
-  class="min-h-screen p-5 font-windows"
+  class="h-screen p-5 font-ms-sans"
   style="--win95-bg: {background}; --win95-window: {window}; --win95-text: {text}; --win95-highlight: {highlight}; --win95-highlight-text: {highlightText}; -webkit-font-smoothing: none || antialiased || subpixel-antialiased -moz-osx-font-smoothing: auto || inherit || unset || grayscale font-smoothing: auto || inherit || unset || grayscale"
 >
-<div class="h-16"></div>
-<div class="flex flex-col">
+<!-- <div class="h-16"></div> -->
+<div class="flex flex-col justify-center items-center h-full w-full">
   <div class="flex w-full justify-center">
     <img src={schizodio_title} alt="SCHIZODIO" width=400px>
   </div>

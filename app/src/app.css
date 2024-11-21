@@ -34,7 +34,8 @@
     -webkit-user-select: none;
   }
 }
+@import url('/fonts/W95FA.otf');
 @font-face {
   font-family: 'Pixelated MS';
-  src: url('static/fonts/W95FA.otf') format('otf');
+  src: url('/fonts/W95FA.otf') format('otf');
 }
