@@ -49,9 +49,10 @@
     <img src={schizodio_title} alt="SCHIZODIO" width=400px>
   </div>
   <div class="flex mb-3 flex-row gap-3 w-full justify-center">
-    <Window title="✨SCHIZODIO✨" width="800px">
-      <img src={schizsphere} alt="SCHIZODIO" width="250px">
-      <img src={schizodio_title} alt="SCHIZODIO">
+    <Window title="✨SCHIZODIO✨" width="800px" height="520px">
+      <!-- <ThemeSelector /> -->
+      <!-- <img src={schizsphere} alt="SCHIZODIO" width="250px">
+      <img src={schizodio_title} alt="SCHIZODIO"> -->
     </Window>
     <div class="flex flex-col gap-3">
       <Window title="✨SCHIZODIO✨" width="300px">
@@ -61,7 +62,7 @@
         </div>
       </Window>
       <img src={schizodio_sq} alt="SCHIZODIO" width="100px">
-      <img src={schizodio_sq} alt="SCHIZODIO" width="300px">
+      <img src={schizsphere} alt="SCHIZODIO" width="300px">
   
     </div>
   </div>
