@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .win95-border {
+    @apply border-2 border-win95-light border-r-win95-darker border-b-win95-darker shadow-[2px_2px_0px_rgba(0,0,0,0.1)];
+  }
+
+  .win95-border-inset {
+    @apply border-2 border-win95-darker border-r-win95-light border-b-win95-light bg-win95-gray;
+  }
+
+  .win95-button {
+    @apply bg-win95-gray win95-border px-4 py-1 font-ms-sans text-sm text-win95-text cursor-pointer min-w-[75px]
+           disabled:text-win95-dark disabled:cursor-default disabled:shadow-[1px_1px_0px_#ffffff]
+           active:enabled:border-win95-darker active:enabled:border-r-win95-light active:enabled:border-b-win95-light
+           active:enabled:pt-[6px] active:enabled:pr-[14px] active:enabled:pb-[4px] active:enabled:pl-[18px];
+  }
+
+  .win95-button.active {
+    @apply border-win95-darker border-r-win95-light border-b-win95-light
+           pt-[6px] pr-[14px] pb-[4px] pl-[18px];
+  }
+
+  .win95-input {
+    @apply win95-border-inset bg-win95-light px-1 py-1 font-ms-sans text-sm
+           focus:outline-none
+           disabled:bg-win95-gray disabled:text-win95-dark;
+  }
+
+  /* Prevent text selection while dragging */
+  .cursor-grab, .cursor-grabbing {
+    user-select: none;
+    -webkit-user-select: none;
+  }
+}
