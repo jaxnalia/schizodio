@@ -11,6 +11,8 @@
   import Menu from './lib/components/Menu.svelte';
   import ThemeSelector from './lib/components/ThemeSelector.svelte';
   import { currentTheme } from './lib/stores/theme';
+  import schizodio_title from "./assets/images/schizodio.png";
+  import schizodio_sq from "./assets/images/schizodio_sq.jpg";
 
   let textValue = '';
   let sliderValue = 50;
@@ -42,8 +44,8 @@
 >
 
   <Window title="✨SCHIZODIO✨" width="500px">
-    <img src="static/images/schizodio_sq.jpg" alt="SCHIZODIO" width="250px">
-    <img src="static/images/schizodio.png" alt="SCHIZODIO">
+    <img src={schizodio_sq} alt="SCHIZODIO" width="250px">
+    <img src={schizodio_title} alt="SCHIZODIO">
   </Window>
   <Window title="Windows 95 Components & Themes" width="500px">
     <div class="text-win95-text">
