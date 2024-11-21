@@ -13,6 +13,7 @@
   import { currentTheme } from './lib/stores/theme';
   import schizodio_title from "./assets/images/schizodio.png";
   import schizodio_sq from "./assets/images/schizodio_sq.jpg";
+  import schizsphere from "./assets/images/SchizoSphere.gif"
 
   let textValue = '';
   let sliderValue = 50;
@@ -49,7 +50,7 @@
   </div>
   <div class="flex mb-3 flex-row gap-3 w-full justify-center">
     <Window title="✨SCHIZODIO✨" width="800px">
-      <img src={schizodio_sq} alt="SCHIZODIO" width="250px">
+      <img src={schizsphere} alt="SCHIZODIO" width="250px">
       <img src={schizodio_title} alt="SCHIZODIO">
     </Window>
     <div class="flex flex-col gap-3">
