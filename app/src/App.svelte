@@ -42,12 +42,43 @@
   class="min-h-screen p-5 font-windows"
   style="--win95-bg: {background}; --win95-window: {window}; --win95-text: {text}; --win95-highlight: {highlight}; --win95-highlight-text: {highlightText}; -webkit-font-smoothing: none || antialiased || subpixel-antialiased -moz-osx-font-smoothing: auto || inherit || unset || grayscale font-smoothing: auto || inherit || unset || grayscale"
 >
+<div class="h-16"></div>
+<div class="flex flex-col">
+  <div class="flex w-full justify-center">
+    <img src={schizodio_title} alt="SCHIZODIO" width=400px>
+  </div>
+  <div class="flex mb-3 flex-row gap-3 w-full justify-center">
+    <Window title="✨SCHIZODIO✨" width="800px">
+      <img src={schizodio_sq} alt="SCHIZODIO" width="250px">
+      <img src={schizodio_title} alt="SCHIZODIO">
+    </Window>
+    <div class="flex flex-col gap-3">
+      <Window title="✨SCHIZODIO✨" width="300px">
+        <div>
+          <label class="text-sm block mb-1">How retarded are you?</label>
+          <Slider bind:value={volumeValue} min={0} max={100} step={5} />
+        </div>
+      </Window>
+      <img src={schizodio_sq} alt="SCHIZODIO" width="100px">
+      <img src={schizodio_sq} alt="SCHIZODIO" width="300px">
+  
+    </div>
+  </div>
+  <div class="flex mb-3 flex-row gap-3 w-full justify-center">
+    <img src={schizodio_sq} alt="SCHIZODIO" width="300px">
+    <Window title="✨SCHIZODIO✨" width="800px">
+      <p class="font-bold text-xl">0x00acc2fa3bb7f6a6726c14d9e142d51fe3984dbfa32b5907e1e76425177875e2</p>
+      
+    </Window>
+  
+    
+  </div>
+</div>
 
-  <Window title="✨SCHIZODIO✨" width="500px">
-    <img src={schizodio_sq} alt="SCHIZODIO" width="250px">
-    <img src={schizodio_title} alt="SCHIZODIO">
-  </Window>
-  <Window title="Windows 95 Components & Themes" width="500px">
+
+
+  
+  <!-- <Window title="Windows 95 Components & Themes" width="500px">
     <div class="text-win95-text">
       <ThemeSelector />
 
@@ -115,14 +146,12 @@
             <label class="text-sm block mb-1">Basic Slider</label>
             <Slider bind:value={sliderValue} min={0} max={100} step={1} />
           </div>
-          <div>
-            <label class="text-sm block mb-1">Volume Control</label>
-            <Slider bind:value={volumeValue} min={0} max={100} step={5} />
-          </div>
+          
         </div>
       </div>
     </div>
-  </Window>
+  </Window> -->
+
 </main>
 
 <style>
