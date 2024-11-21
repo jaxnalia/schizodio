@@ -65,8 +65,8 @@
     </div>
   </div>
   <div class="flex mb-3 flex-row gap-3 w-full justify-center">
-    <img src={schizodio_sq} alt="SCHIZODIO" width="300px">
-    <Window title="✨SCHIZODIO✨" width="800px">
+    <img src={schizodio_sq} alt="SCHIZODIO" width="100px">
+    <Window title="✨SCHIZODIO✨" width="1000px">
       <p class="font-bold text-xl">0x00acc2fa3bb7f6a6726c14d9e142d51fe3984dbfa32b5907e1e76425177875e2</p>
       
     </Window>
