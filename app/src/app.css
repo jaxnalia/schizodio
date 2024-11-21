@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 @layer components {
   .win95-border {
     @apply border-2 border-win95-light border-r-win95-darker border-b-win95-darker shadow-[2px_2px_0px_rgba(0,0,0,0.1)];
@@ -37,5 +36,5 @@
 }
 @font-face {
   font-family: 'Pixelated MS';
-  src: url('static/fonts/W95FA.otf');
+  src: url('static/fonts/W95FA.otf') format('otf');
 }
