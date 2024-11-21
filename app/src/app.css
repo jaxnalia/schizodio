@@ -11,15 +11,15 @@
   }
 
   .win95-button {
-    @apply bg-win95-gray win95-border px-4 py-1 font-ms-sans text-sm text-win95-text cursor-pointer min-w-[75px]
+    @apply bg-win95-gray win95-border py-1 font-ms-sans text-sm text-win95-text cursor-pointer min-w-[18px]
            disabled:text-win95-dark disabled:cursor-default disabled:shadow-[1px_1px_0px_#ffffff]
            active:enabled:border-win95-darker active:enabled:border-r-win95-light active:enabled:border-b-win95-light
-           active:enabled:pt-[6px] active:enabled:pr-[14px] active:enabled:pb-[4px] active:enabled:pl-[18px];
+           ;
   }
 
   .win95-button.active {
     @apply border-win95-darker border-r-win95-light border-b-win95-light
-           pt-[6px] pr-[14px] pb-[4px] pl-[18px];
+           ;
   }
 
   .win95-input {

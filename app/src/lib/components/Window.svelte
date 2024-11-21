@@ -7,7 +7,7 @@
 <div class="bg-win95-gray win95-border" style="width: {width}; height: {height};">
   <div class="bg-win95-blue text-xs text-win95-light px-1 py-0.5 flex justify-between items-center font-ms-sans font-bold">
     <div>{title}</div>
-    <button class="win95-button h-5 w-5 flex items-center justify-center p-0 leading-none">×</button>
+    <button class="win95-button flex items-center justify-center p-0 leading-none">×</button>
   </div>
   <div class="p-2">
     <slot></slot>
