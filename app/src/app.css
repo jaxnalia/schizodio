@@ -38,8 +38,8 @@ main {
   background-image: url('/glitchloop2.webp');
   background-size: cover;
 }
-@import url('/fonts/W95FA.otf');
+
 @font-face {
   font-family: 'Pixelated MS';
-  src: url('/fonts/W95FA.otf') format('otf');
+  src: url('/fonts/W95FA.otf') format('opentype');
 }

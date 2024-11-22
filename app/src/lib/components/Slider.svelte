@@ -32,7 +32,8 @@
   on:mousemove={handleMouseMove}
 />
 
-<div class="flex items-center gap-2">
+<div class="flex items-center gap-2 text-xs">
+  Low
   <div
     bind:this={sliderTrack}
     class="win95-border-inset flex-1 h-5 relative cursor-pointer"
@@ -49,7 +50,8 @@
       style="left: {((value - min) / (max - min)) * 100}%"
     />
   </div>
-  <div class="win95-border-inset px-2 py-0.5 min-w-[50px] text-center font-ms-sans text-sm">
+  High
+  <!-- <div class="win95-border-inset px-2 py-0.5 min-w-[50px] text-center font-ms-sans text-sm">
     {value}
-  </div>
+  </div> -->
 </div>
