@@ -40,17 +40,18 @@
 </script>
 
 <main 
-  class="h-screen p-5 font-ms-sans"
+  class="h-screen p-5 font-windows"
   style="--win95-bg: {background}; --win95-window: {window}; --win95-text: {text}; --win95-highlight: {highlight}; --win95-highlight-text: {highlightText}; -webkit-font-smoothing: none || antialiased || subpixel-antialiased -moz-osx-font-smoothing: auto || inherit || unset || grayscale font-smoothing: auto || inherit || unset || grayscale"
 >
 <!-- <div class="h-16"></div> -->
 <div class="flex flex-col justify-center items-center h-full w-full">
-  <div class="flex w-full justify-center">
+  <div class="container flex w-full justify-center ">
     <img src={schizodio_title} alt="Schizodio" width=400px>
   </div>
-  <div class="flex mb-3 flex-row gap-3 w-full justify-center">
-    <Window title="✨Schizodio✨" width="800px" height="520px">
-      <!-- <ThemeSelector /> -->
+  <div class="container flex mb-3 flex-row gap-3 w-full justify-center">
+    <Window title="✨Schizodio✨" width="" height="520px">
+      <ThemeSelector />
+       <div class=""></div>
       <!-- <img src={schizsphere} alt="SCHIZODIO" width="250px">
       <img src={schizodio_title} alt="SCHIZODIO"> -->
     </Window>
@@ -66,9 +67,9 @@
   
     </div>
   </div>
-  <div class="flex mb-3 flex-row gap-3 w-full justify-center">
-    <img src={schizodio_sq} alt="SCHIZODIO" width="100px">
-    <Window title="✨Schizodio✨" width="1000px">
+  <div class="container flex mb-3 flex-row gap-3 w-full justify-center">
+    <img src={schizodio_sq} alt="SCHIZODIO" width="100">
+    <Window title="✨Schizodio✨" width="">
       <p class="font-bold text-2xl text-center">0x00acc2fa3bb7f6a6726c14d9e142d51fe3984dbfa32b5907e1e76425177875e2</p>
       
     </Window>
