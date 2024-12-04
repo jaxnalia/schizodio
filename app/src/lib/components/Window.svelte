@@ -1,6 +1,6 @@
 <script lang="ts">
   export let title: string;
-  export let width = "300px";
+  export let width = "auto";
   export let height = "auto";
 </script>
 

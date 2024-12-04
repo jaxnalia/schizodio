@@ -13,7 +13,9 @@
   import { currentTheme } from './lib/stores/theme';
   import schizodio_title from "./assets/images/schizodio.png";
   import schizodio_sq from "./assets/images/schizodio_sq.jpg";
-  import schizsphere from "./assets/images/SchizoSphere.gif"
+  import schizsphere from "./assets/images/SchizoSphere.gif";
+  import danceGif from "./assets/images/dance-schizo.gif";
+  import CopyButton from './lib/components/CopyButton.svelte';
 
   let textValue = '';
   let sliderValue = 50;
@@ -43,34 +45,44 @@
   class="static h-full sm:h-screen w-full p-5 font-windows"
   style="--win95-bg: {background}; --win95-window: {window}; --win95-text: {text}; --win95-highlight: {highlight}; --win95-highlight-text: {highlightText}; -webkit-font-smoothing: none || antialiased || subpixel-antialiased -moz-osx-font-smoothing: auto || inherit || unset || grayscale font-smoothing: auto || inherit || unset || grayscale"
 >
-<!-- <div class="h-16"></div> -->
-<div class="flex flex-col justify-center items-center h-full w-full">
+<!-- MAIN COLUMN -->
+<div class="gap-8 flex flex-col justify-center items-center h-full w-full">
   <div class="container flex w-full justify-center ">
     <img src={schizodio_title} alt="Schizodio" width=400px>
   </div>
+
+  <!-- FIRST ROW -->
+
   <div class="container flex mb-3 flex-col max-sm:items-center sm:flex-row gap-3 w-full justify-center">
-    <Window title="✨Schizodio✨" width="300px">
+    <!-- FIRST WINDOW -->
+    <Window title="✨Schizodio✨" width="">
       <!-- <ThemeSelector /> -->
-       <div class="w-screen"></div>
-      <img src={schizodio_sq} alt="SCHIZODIO">
-      <img src={schizodio_title} alt="SCHIZODIO">
+      <img src={schizodio_sq} alt="SCHIZODIO" class="w-full sm:w-96">
+      <img src={schizodio_title} alt="SCHIZODIO" class="w-full sm:w-96">
     </Window>
-    <div class="flex flex-col gap-3">
-      <Window title="✨Schizodio✨" width="300px">
+    <div class="flex flex-col gap-3 w-full sm:w-64">
+      <Window title="✨Schizodio✨" width="full">
         <div>
           <label class="text-xs block mb-1">How schizo you are?</label>
           <Slider bind:value={volumeValue} min={0} max={100} step={10} />
         </div>
       </Window>
-      <img src={schizodio_sq} alt="SCHIZODIO" width="100px">
-      <img src={schizsphere} alt="SCHIZODIO" width="300px">
+      <img src={schizsphere} alt="SCHIZODIO" width="auto">
+      <img src={danceGif} alt="SCHIZODIO" width="auto">
   
     </div>
   </div>
+
+  <!-- CONTRACT ADDRESS -->
+
   <div class="container flex mb-3 flex-col max-sm:items-center sm:flex-row gap-3 w-full justify-center">
-    <img src={schizodio_sq} alt="SCHIZODIO" width="100">
-    <Window title="✨Schizodio✨" width="">
-      <p class="font-bold text-sm sm:text-2xl text-center">0x00acc2fa3bb7f6a6726c14d9e142d51fe3984dbfa32b5907e1e76425177875e2</p>
+    <!-- <img src={schizsphere} alt="SCHIZODIO" width="100"> -->
+    <Window title="✨Schizodio✨">
+      <div class="flex justify-center gap-2">
+        <CopyButton />
+        <p class="max-sm:hidden sm:text-lg text-center">0x00acc2fa3bb7f6a6726c14d9e142d51fe3984dbfa32b5907e1e76425177875e2</p>
+        
+      </div>
       
     </Window>
   
