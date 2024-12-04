@@ -77,7 +77,7 @@
 
   <div class="container flex mb-3 flex-col max-sm:items-center sm:flex-row gap-3 w-full justify-center">
     <!-- <img src={schizsphere} alt="SCHIZODIO" width="100"> -->
-    <Window title="✨Schizodio✨">
+    <Window title="✨Contract Address✨">
       <div class="flex justify-center gap-2">
         <CopyButton />
         <p class="max-sm:hidden sm:text-lg text-center">0x00acc2fa3bb7f6a6726c14d9e142d51fe3984dbfa32b5907e1e76425177875e2</p>
