@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { getClientX, calculateSliderValue, type SliderEvent } from '../utils/slider';
+
   export let value = 50;
   export let min = 0;
   export let max = 100;
@@ -8,28 +10,32 @@
   let isDragging = false;
   let sliderTrack: HTMLDivElement;
 
-  function handleMouseDown() {
+  function handleStart(event: SliderEvent) {
     if (!disabled) {
       isDragging = true;
+      handleMove(event);
     }
   }
 
-  function handleMouseUp() {
+  function handleEnd() {
     isDragging = false;
   }
 
-  function handleMouseMove(event: MouseEvent) {
+  function handleMove(event: SliderEvent) {
     if (isDragging && sliderTrack) {
+      const clientX = getClientX(event);
       const rect = sliderTrack.getBoundingClientRect();
-      const percentage = Math.max(0, Math.min(1, (event.clientX - rect.left) / rect.width));
-      value = Math.round((min + (max - min) * percentage) / step) * step;
+      value = calculateSliderValue(clientX, rect, min, max, step);
     }
   }
 </script>
 
 <svelte:window 
-  on:mouseup={handleMouseUp}
-  on:mousemove={handleMouseMove}
+  on:mouseup={handleEnd}
+  on:mousemove={handleMove}
+  on:touchend={handleEnd}
+  on:touchcancel={handleEnd}
+  on:touchmove|preventDefault={handleMove}
 />
 
 <div class="flex items-center gap-2 text-xs">
@@ -38,7 +44,8 @@
     bind:this={sliderTrack}
     class="win95-border-inset flex-1 h-5 relative cursor-pointer"
     class:cursor-not-allowed={disabled}
-    on:mousedown={handleMouseDown}
+    on:mousedown={handleStart}
+    on:touchstart|preventDefault={handleStart}
   >
     <div 
       class="absolute top-0 bottom-0 left-0 bg-win95-dark"
@@ -51,7 +58,4 @@
     />
   </div>
   High
-  <!-- <div class="win95-border-inset px-2 py-0.5 min-w-[50px] text-center font-ms-sans text-sm">
-    {value}
-  </div> -->
 </div>

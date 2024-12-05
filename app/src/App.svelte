@@ -19,8 +19,8 @@
   import Bliss from "./assets/images/bliss.jpg"
 
   let textValue = '';
-  let sliderValue = 50;
-  let volumeValue = 70;
+  let sliderValue = 100;
+  let volumeValue = 100;
   let isChecked = false;
   let selectedRadio = 'option1';
   let selectedOption = 'option1';
