@@ -34,9 +34,13 @@
     -webkit-user-select: none;
   }
 }
+
 main {
   background-image: url('/glitchloop2.webp');
   background-size: cover;
+  font-smooth: never;
+  -webkit-font-smoothing : none;
+  text-shadow: none;
 }
 
 @font-face {

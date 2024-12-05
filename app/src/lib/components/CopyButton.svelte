@@ -35,6 +35,7 @@
   </script>
   
   <Button
+  width="82px"
     on:click={copyToClipboard}
   
     aria-label={showSuccess ? successText : buttonText}

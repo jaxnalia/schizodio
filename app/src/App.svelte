@@ -16,6 +16,7 @@
   import schizsphere from "./assets/images/SchizoSphere.gif";
   import danceGif from "./assets/images/dance-schizo.gif";
   import CopyButton from './lib/components/CopyButton.svelte';
+  import Bliss from "./assets/images/bliss.jpg"
 
   let textValue = '';
   let sliderValue = 50;
@@ -55,20 +56,40 @@
 
   <div class="container flex mb-3 flex-col max-sm:items-center sm:flex-row gap-3 w-full justify-center">
     <!-- FIRST WINDOW -->
-    <Window title="✨Schizodio✨" width="">
-      <!-- <ThemeSelector /> -->
-      <img src={schizodio_sq} alt="SCHIZODIO" class="w-full sm:w-96">
-      <img src={schizodio_title} alt="SCHIZODIO" class="w-full sm:w-96">
+    <Window title="✨Schizodio✨">
+      <style>
+        .bliss {
+          background-image: URL("https://upload.wikimedia.org/wikipedia/en/2/27/Bliss_%28Windows_XP%29.png");
+          background-size: cover; 
+          background-position: center;
+        }
+      </style>
+      <div class="bliss w-full sm:w-96">
+        <img src={danceGif} alt="SCHIZODIO" width="auto">
+      </div>
+      <div class="flex gap-1 w-full mt-1">
+        
+        <!-- <div class="flex gap-1"> -->
+          <a class="w-full" href="https://x.com/schizodio"><Button>Twitter</Button></a>
+          <a class="w-full" href="https://t.me/schizodio"><Button>Telegram</Button></a>
+        <!-- </div> -->
+        <!-- <div class="flex gap-1"> -->
+          <a class="w-full" href="https://app.avnu.fi/en?mode=simple&tokenFrom=0x4718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d&tokenTo=0xacc2fa3bb7f6a6726c14d9e142d51fe3984dbfa32b5907e1e76425177875e2&amount=0.001"><Button>Dex</Button></a>
+          <a class="w-full" href="https://dexscreener.com/starknet/0x00acc2fa3bb7f6a6726c14d9e142d51fe3984dbfa32b5907e1e76425177875e2-0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d-2347948331754475397897284791279200659-5982-0x0"><Button>Chart</Button></a>
+        <!-- </div> -->
+        
+        
+      </div>
     </Window>
-    <div class="flex flex-col gap-3 w-full sm:w-64">
-      <Window title="✨Schizodio✨" width="full">
+    <div class="flex flex-col gap-3 max-w-96 w-full sm:w-64">
+      <Window title="😵schizodio.exe" width="full">
         <div>
           <label class="text-xs block mb-1">How schizo you are?</label>
           <Slider bind:value={volumeValue} min={0} max={100} step={10} />
         </div>
       </Window>
-      <img src={schizsphere} alt="SCHIZODIO" width="auto">
-      <img src={danceGif} alt="SCHIZODIO" width="auto">
+      <img src={schizodio_sq} alt="SCHIZODIO" width="auto" class="rounded-full">
+      <!-- <img src={danceGif} alt="SCHIZODIO" width="auto"> -->
   
     </div>
   </div>
@@ -77,10 +98,10 @@
 
   <div class="container flex mb-3 flex-col max-sm:items-center sm:flex-row gap-3 w-full justify-center">
     <!-- <img src={schizsphere} alt="SCHIZODIO" width="100"> -->
-    <Window title="✨Contract Address✨">
-      <div class="flex justify-center gap-2">
+    <Window title="📄Contract Address">
+      <div class="max-sm:flex-col flex justify-center gap-2">
         <CopyButton />
-        <p class="max-sm:hidden sm:text-lg text-center">0x00acc2fa3bb7f6a6726c14d9e142d51fe3984dbfa32b5907e1e76425177875e2</p>
+        <p class="text-xxs sm:text-lg text-center">0x00acc2fa3bb7f6a6726c14d9e142d51fe3984dbfa32b5907e1e76425177875e2</p>
         
       </div>
       

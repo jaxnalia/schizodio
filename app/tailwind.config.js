@@ -17,7 +17,11 @@ export default {
       fontFamily: {
         'ms-sans': ['"MS Sans Serif"', 'sans-serif'],
         'windows': ['"Pixelated MS"', 'sans-serif']
-      }
+      },
+      fontSize: {
+        'xxs': '0.675rem',
+        
+    },
     }
   },
   plugins: []
