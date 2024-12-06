@@ -48,7 +48,7 @@
           background-position: center;
         }
       </style>
-      <div class="bliss w-full sm:w-192">
+      <div class="bliss w-full sm:w-96">
         <img src={danceGif} alt="SCHIZODIO" width="auto">
       </div>
       <div class="flex gap-1 w-full mt-1.5">
