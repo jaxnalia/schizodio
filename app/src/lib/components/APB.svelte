@@ -8,7 +8,7 @@
   export let autoplay = true;
   
   let audio: HTMLAudioElement;
-  let state: AudioPlayerState = 'paused';
+  let state: AudioPlayerState = 'playing';
   let volume = 0.5;
   
   onMount(() => {
