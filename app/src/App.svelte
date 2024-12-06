@@ -1,35 +1,16 @@
 <script lang="ts">
   import Window from './lib/components/Window.svelte';
   import Button from './lib/components/Button.svelte';
-  import TextField from './lib/components/TextField.svelte';
-  import Slider from './lib/components/Slider.svelte';
-  import Checkbox from './lib/components/Checkbox.svelte';
-  import Radio from './lib/components/Radio.svelte';
-  import Select from './lib/components/Select.svelte';
-  import ProgressBar from './lib/components/ProgressBar.svelte';
-  import Tabs from './lib/components/Tabs.svelte';
-  import Menu from './lib/components/Menu.svelte';
-  import ThemeSelector from './lib/components/ThemeSelector.svelte';
   import { currentTheme } from './lib/stores/theme';
   import schizodio_title from "./assets/images/schizodio.png";
   import schizodio_sq from "./assets/images/schizodio_sq.jpg";
-  import schizsphere from "./assets/images/SchizoSphere.gif";
   import danceGif from "./assets/images/dance-schizo.gif";
   import CopyButton from './lib/components/CopyButton.svelte';
-  import Bliss from "./assets/images/bliss.jpg"
-  // import AudioPlayerButton from './lib/components/AudioPlayerButton.svelte';
-    import Apb from './lib/components/APB.svelte';
-    import VolumeSlider from './lib/components/VolumeSlider.svelte';
+  // import Bliss from "./assets/images/bliss.jpg"
+  import AudioPlayer from './lib/components/AudioPlayer.svelte';
+  import VolumeSlider from './lib/components/VolumeSlider.svelte';
 
-  let textValue = '';
-  let sliderValue = 100;
   let volumeValue = 1;
-  let isChecked = false;
-  let selectedRadio = 'option1';
-  let selectedOption = 'option1';
-  let progress = 45;
-  let activeTab = 'Tab 1';
-  let isMenuOpen = false;
 
   const menuItems = [
     { label: 'New' },
@@ -67,7 +48,7 @@
           background-position: center;
         }
       </style>
-      <div class="bliss w-full sm:w-96">
+      <div class="bliss w-full sm:w-192">
         <img src={danceGif} alt="SCHIZODIO" width="auto">
       </div>
       <div class="flex gap-1 w-full mt-1.5">
@@ -79,7 +60,7 @@
     </Window>
     <div class="flex flex-col gap-2 max-w-96 w-full sm:w-64">
       <Window title="😵schizodio.exe" width="full">
-        <div>
+        <div class="relative">
           <label class="text-xs block mb-1">How schizo you are?</label>
           <div class="flex text-xs gap-2">
             <span>Low</span>
@@ -90,8 +71,7 @@
         </div>
       </Window>
       <Window title="💿schizo.mp3" width="full">
-        <!-- <AudioPlayerButton audioSrc="./canttakemyeyesoffyou.mp3"/> -->
-        <Apb audioSrc="./canttakemyeyesoffyou.mp3"/>
+        <AudioPlayer audioSrc="./canttakemyeyesoffyou.mp3"/>
       </Window>
       <img src={schizodio_sq} alt="SCHIZODIO" width="auto" class="">
       <!-- <img src={danceGif} alt="SCHIZODIO" width="auto"> -->
@@ -115,83 +95,6 @@
     
   </div>
 </div>
-
-
-
-  
-  <!-- <Window title="Windows 95 Components & Themes" width="500px">
-    <div class="text-win95-text">
-      <ThemeSelector />
-
-      <div class="relative mb-4">
-        <Button on:click={() => isMenuOpen = !isMenuOpen}>File</Button>
-        <Menu items={menuItems} bind:isOpen={isMenuOpen} />
-      </div>
-
-      <div class="mb-4">
-        <h3 class="text-sm font-bold my-2">Tabs</h3>
-        <Tabs {tabs} bind:activeTab>
-          <div class="p-2">Content for {activeTab}</div>
-        </Tabs>
-      </div>
-
-      <div class="mb-4">
-        <h3 class="text-sm font-bold my-2">Progress Bar</h3>
-        <ProgressBar value={progress} max={100} />
-      </div>
-
-      <div class="mb-4">
-        <h3 class="text-sm font-bold my-2">Checkboxes</h3>
-        <div class="space-y-2">
-          <Checkbox bind:checked={isChecked} label="Enable feature" />
-          <Checkbox checked={true} label="Disabled checked" disabled />
-        </div>
-      </div>
-
-      <div class="mb-4">
-        <h3 class="text-sm font-bold my-2">Radio Buttons</h3>
-        <div class="space-y-2">
-          <Radio bind:group={selectedRadio} value="option1" label="Option 1" />
-          <Radio bind:group={selectedRadio} value="option2" label="Option 2" />
-          <Radio bind:group={selectedRadio} value="option3" label="Option 3" disabled />
-        </div>
-      </div>
-
-      <div class="mb-4">
-        <h3 class="text-sm font-bold my-2">Select</h3>
-        <Select bind:value={selectedOption}>
-          <option value="option1">Option 1</option>
-          <option value="option2">Option 2</option>
-          <option value="option3">Option 3</option>
-        </Select>
-      </div>
-
-      <div class="mb-4">
-        <h3 class="text-sm font-bold my-2">Text Field</h3>
-        <div class="space-y-2">
-          <TextField 
-            bind:value={textValue} 
-            placeholder="Type something..."
-          />
-          <TextField 
-            value="Disabled input" 
-            disabled
-          />
-        </div>
-      </div>
-
-      <div class="mb-4">
-        <h3 class="text-sm font-bold my-2">Sliders</h3>
-        <div class="space-y-3">
-          <div>
-            <label class="text-sm block mb-1">Basic Slider</label>
-            <Slider bind:value={sliderValue} min={0} max={100} step={1} />
-          </div>
-          
-        </div>
-      </div>
-    </div>
-  </Window> -->
 
 </main>
 

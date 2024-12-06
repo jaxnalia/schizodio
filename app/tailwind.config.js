@@ -14,6 +14,12 @@ export default {
           teal: '#008080'
         }
       },
+      spacing: {
+        '128': '32rem',
+        '192': '48rem',
+        '256': '64rem',
+        '512': '128rem',
+      },
       fontFamily: {
         'ms-sans': ['"MS Sans Serif"', 'sans-serif'],
         'windows': ['"Pixelated MS"', 'sans-serif']

@@ -63,6 +63,56 @@
   }
 }
 
+/* Apply styles to the entire body */
+body {
+  scrollbar-width: thin; /* For Firefox */
+}
+
+/* Webkit browsers (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 16px; /* Scrollbar width */
+  height: 16px; /* Scrollbar height for horizontal scrolling */
+  background: #c0c0c0; /* Background of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c0c0c0; /* Thumb (scroll handle) color */
+  border: 1px solid #ffffff; /* Border to create the "3D" effect */
+  border-radius: 0; /* Square edges for a retro look */
+  border-right: 1px solid #808080;
+  border-bottom: 1px solid #808080;
+  filter: drop-shadow(0 1px 1px 0 black);
+  @apply win95-button;
+}
+
+/* ::-webkit-scrollbar-thumb:hover {
+  background: #a0a0a0; /* Lighter color for hover effect */
+/* } */ 
+
+::-webkit-scrollbar-track {
+  background: #808080; /* Track color */
+  border-left: 1px solid #ffffff; /* Create an inset effect */
+  border-top: 1px solid #ffffff;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+::-webkit-scrollbar-track-piece {
+  background: #808080; /* Fill the gap in the track */
+}
+
+::-webkit-scrollbar-corner {
+  background: #c0c0c0; /* Corner piece between vertical and horizontal scrollbars */
+}
+
+/* Scrollbar styling for Firefox */
+body::-webkit-scrollbar {
+  scrollbar-color: #808080 #c0c0c0; /* Thumb and track colors */
+  scrollbar-width: thin;
+}
+
+
+
 main {
   background-image: url('/glitchloop2.webp');
   background-size: cover;
