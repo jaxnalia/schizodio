@@ -83,7 +83,7 @@
           <Slider bind:value={volumeValue} min={0} max={100} step={10} />
         </div>
       </Window>
-      <Window title="🎵schizo.mp3" width="full">
+      <Window title="💿schizo.mp3" width="full">
         <!-- <AudioPlayerButton audioSrc="./canttakemyeyesoffyou.mp3"/> -->
         <Apb audioSrc="./canttakemyeyesoffyou.mp3"/>
       </Window>
