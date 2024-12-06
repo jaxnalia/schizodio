@@ -17,12 +17,13 @@
   import danceGif from "./assets/images/dance-schizo.gif";
   import CopyButton from './lib/components/CopyButton.svelte';
   import Bliss from "./assets/images/bliss.jpg"
-  import AudioPlayerButton from './lib/components/AudioPlayerButton.svelte';
+  // import AudioPlayerButton from './lib/components/AudioPlayerButton.svelte';
     import Apb from './lib/components/APB.svelte';
+    import VolumeSlider from './lib/components/VolumeSlider.svelte';
 
   let textValue = '';
   let sliderValue = 100;
-  let volumeValue = 100;
+  let volumeValue = 1;
   let isChecked = false;
   let selectedRadio = 'option1';
   let selectedOption = 'option1';
@@ -80,7 +81,13 @@
       <Window title="😵schizodio.exe" width="full">
         <div>
           <label class="text-xs block mb-1">How schizo you are?</label>
-          <Slider bind:value={volumeValue} min={0} max={100} step={10} />
+          <div class="flex text-xs gap-2">
+            <span>Low</span>
+            <VolumeSlider bind:value={volumeValue} steps={10} />
+            <!-- <Slider bind:value={volumeValue} min={0} max={100} step={10} /> -->
+            <span>High</span>
+          </div>
+          
         </div>
       </Window>
       <Window title="💿schizo.mp3" width="full">

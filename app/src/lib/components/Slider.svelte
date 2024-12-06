@@ -38,8 +38,7 @@
   on:touchmove|preventDefault={handleMove}
 />
 
-<div class="flex items-center gap-2 text-xs">
-  Low
+<div class="flex w-full items-center gap-2 text-xs">
   <div
     bind:this={sliderTrack}
     class="win95-border-inset flex-1 h-5 relative cursor-pointer"
@@ -49,7 +48,7 @@
   >
     <div 
       class="absolute top-0 bottom-0 left-0 bg-win95-dark"
-      style="width: {((value - min) / (max - min)) * 100}%"
+      style="width: 100%"
     />
     <div
       class="win95-button absolute w-3 h-full -ml-1.5 cursor-grab active:cursor-grabbing"
@@ -57,5 +56,4 @@
       style="left: {((value - min) / (max - min)) * 100}%"
     />
   </div>
-  High
 </div>

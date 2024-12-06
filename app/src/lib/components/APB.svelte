@@ -2,14 +2,16 @@
   import { onMount } from 'svelte';
   import type { AudioPlayerState } from './types';
   import VolumeSlider from './VolumeSlider.svelte';
+  import Button from './Button.svelte';
   
   export let audioSrc: string;
   export let title = 'Audio Player';
   export let autoplay = true;
   
   let audio: HTMLAudioElement;
-  let state: AudioPlayerState = 'playing';
-  let volume = 0.5;
+  let state: AudioPlayerState = 'paused';
+
+  let volume = 1;
   
   onMount(() => {
     audio = new Audio(audioSrc);
@@ -52,13 +54,8 @@
   }
 </script>
 
-<div class="audio-player">
-  <button 
-    on:click={togglePlay}
-    class="audio-button"
-    aria-label={state === 'playing' ? 'Pause' : 'Play'}
-    title={title}
-  >
+<div class="audio-player w-full gap-2">
+  <Button on:click={togglePlay} width="54px">
     {#if state === 'playing'}
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
         <rect x="6" y="4" width="4" height="16"/>
@@ -69,16 +66,17 @@
         <path d="M8 5v14l11-7z"/>
       </svg>
     {/if}
-  </button>
-  <!-- <VolumeSlider value={volume} steps={10} on:change={handleVolumeChange} /> -->
+  </Button>
+  
+  <VolumeSlider value={volume} steps={10} on:change={handleVolumeChange} />
 </div>
 
 <style>
   .audio-player {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    
     align-items: center;
-    gap: 8px;
   }
 
   .audio-button {
