@@ -50,16 +50,16 @@
   style="--win95-bg: {background}; --win95-window: {window}; --win95-text: {text}; --win95-highlight: {highlight}; --win95-highlight-text: {highlightText}; -webkit-font-smoothing: none || antialiased || subpixel-antialiased -moz-osx-font-smoothing: auto || inherit || unset || grayscale font-smoothing: auto || inherit || unset || grayscale"
 >
 <!-- MAIN COLUMN -->
-<div class="gap-6 flex flex-col justify-center items-center h-full w-full">
+<div class="gap-2 flex flex-col justify-center items-center h-full w-full">
   <div class="container flex w-full justify-center ">
     <img src={schizodio_title} alt="Schizodio" width=400px>
   </div>
 
   <!-- FIRST ROW -->
 
-  <div class="container flex mb-3 flex-col max-sm:items-center sm:flex-row gap-2 w-full justify-center">
+  <div class="container flex flex-col max-sm:items-center sm:flex-row gap-2 w-full justify-center">
     <!-- FIRST WINDOW -->
-    <Window title="✨Schizodio✨">
+    <Window title="✨Schizodio✨" width="full">
       <style>
         .bliss {
           background-image: URL("https://upload.wikimedia.org/wikipedia/en/2/27/Bliss_%28Windows_XP%29.png");
@@ -93,7 +93,7 @@
         <!-- <AudioPlayerButton audioSrc="./canttakemyeyesoffyou.mp3"/> -->
         <Apb audioSrc="./canttakemyeyesoffyou.mp3"/>
       </Window>
-      <img src={schizodio_sq} alt="SCHIZODIO" width="256px" class="rounded-full">
+      <img src={schizodio_sq} alt="SCHIZODIO" width="auto" class="">
       <!-- <img src={danceGif} alt="SCHIZODIO" width="auto"> -->
   
     </div>
@@ -101,9 +101,9 @@
 
   <!-- CONTRACT ADDRESS -->
 
-  <div class="container flex mb-3 flex-col max-sm:items-center sm:flex-row gap-3 w-full justify-center">
+  <div class="container flex mb-3 flex-col max-sm:items-center sm:flex-row gap-2 w-full justify-center">
     <!-- <img src={schizsphere} alt="SCHIZODIO" width="100"> -->
-    <Window title="📄Contract Address">
+    <Window title="📄Contract Address" width="full">
       <div class="max-sm:flex-col flex justify-center gap-2">
         <CopyButton />
         <p class="text-xxs sm:text-lg text-center">0x00acc2fa3bb7f6a6726c14d9e142d51fe3984dbfa32b5907e1e76425177875e2</p>
