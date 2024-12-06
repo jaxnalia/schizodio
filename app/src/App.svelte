@@ -50,14 +50,14 @@
   style="--win95-bg: {background}; --win95-window: {window}; --win95-text: {text}; --win95-highlight: {highlight}; --win95-highlight-text: {highlightText}; -webkit-font-smoothing: none || antialiased || subpixel-antialiased -moz-osx-font-smoothing: auto || inherit || unset || grayscale font-smoothing: auto || inherit || unset || grayscale"
 >
 <!-- MAIN COLUMN -->
-<div class="gap-8 flex flex-col justify-center items-center h-full w-full">
+<div class="gap-6 flex flex-col justify-center items-center h-full w-full">
   <div class="container flex w-full justify-center ">
     <img src={schizodio_title} alt="Schizodio" width=400px>
   </div>
 
   <!-- FIRST ROW -->
 
-  <div class="container flex mb-3 flex-col max-sm:items-center sm:flex-row gap-3 w-full justify-center">
+  <div class="container flex mb-3 flex-col max-sm:items-center sm:flex-row gap-2 w-full justify-center">
     <!-- FIRST WINDOW -->
     <Window title="✨Schizodio✨">
       <style>
@@ -70,21 +70,20 @@
       <div class="bliss w-full sm:w-96">
         <img src={danceGif} alt="SCHIZODIO" width="auto">
       </div>
-      <div class="flex gap-1 w-full mt-1">
+      <div class="flex gap-1 w-full mt-1.5">
           <a class="w-full" href="https://x.com/schizodio"><Button>Twitter</Button></a>
           <a class="w-full" href="https://t.me/schizodio"><Button>Telegram</Button></a>
           <a class="w-full" href="https://app.avnu.fi/en?mode=simple&tokenFrom=0x4718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d&tokenTo=0xacc2fa3bb7f6a6726c14d9e142d51fe3984dbfa32b5907e1e76425177875e2&amount=0.001"><Button>Dex</Button></a>
           <a class="w-full" href="https://dexscreener.com/starknet/0x00acc2fa3bb7f6a6726c14d9e142d51fe3984dbfa32b5907e1e76425177875e2-0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d-2347948331754475397897284791279200659-5982-0x0"><Button>Chart</Button></a>
       </div>
     </Window>
-    <div class="flex flex-col gap-3 max-w-96 w-full sm:w-64">
+    <div class="flex flex-col gap-2 max-w-96 w-full sm:w-64">
       <Window title="😵schizodio.exe" width="full">
         <div>
           <label class="text-xs block mb-1">How schizo you are?</label>
           <div class="flex text-xs gap-2">
             <span>Low</span>
             <VolumeSlider bind:value={volumeValue} steps={10} />
-            <!-- <Slider bind:value={volumeValue} min={0} max={100} step={10} /> -->
             <span>High</span>
           </div>
           
@@ -94,7 +93,7 @@
         <!-- <AudioPlayerButton audioSrc="./canttakemyeyesoffyou.mp3"/> -->
         <Apb audioSrc="./canttakemyeyesoffyou.mp3"/>
       </Window>
-      <img src={schizodio_sq} alt="SCHIZODIO" width="auto" class="rounded-full">
+      <img src={schizodio_sq} alt="SCHIZODIO" width="256px" class="rounded-full">
       <!-- <img src={danceGif} alt="SCHIZODIO" width="auto"> -->
   
     </div>
