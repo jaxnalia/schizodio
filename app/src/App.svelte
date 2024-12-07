@@ -3,14 +3,13 @@
   import Button from './lib/components/Button.svelte';
   import { currentTheme } from './lib/stores/theme';
   import schizodio_title from "./assets/images/schizodio.png";
-  import schizodio_sq from "./assets/images/schizodio_sq.jpg";
-  import danceGif from "./assets/images/dance-schizo.gif";
   import CopyButton from './lib/components/CopyButton.svelte';
   import AudioPlayer from './lib/components/AudioPlayer.svelte';
-  import VolumeSlider from './lib/components/VolumeSlider.svelte';
   import GlitchEffect from './lib/components/GlitchEffect.svelte';
+  import ContractAddress from './lib/contractaddress.svelte';
+  import HeroWindow from './lib/herowindow.svelte';
 
-  let volumeValue = 1;
+  let wildValue = 1;
   let wildMode = false;
 
   const menuItems = [
@@ -32,67 +31,23 @@
   style="--win95-bg: {background}; --win95-window: {window}; --win95-text: {text}; --win95-highlight: {highlight}; --win95-highlight-text: {highlightText}; -webkit-font-smoothing: none || antialiased || subpixel-antialiased -moz-osx-font-smoothing: auto || inherit || unset || grayscale font-smoothing: auto || inherit || unset || grayscale"
 >
 <div class="fixed inset-0 z-0">
-  <GlitchEffect intensity={volumeValue} wild={wildMode} />
+  <GlitchEffect intensity={wildValue} wild={wildMode} />
 </div>
 
 <!-- MAIN COLUMN -->
 <div class="gap-2 flex flex-col justify-center items-center h-full w-full relative z-10">
   <div class="container flex w-full justify-center ">
     <img src={schizodio_title} alt="Schizodio" width=400px>
+    
   </div>
 
   <!-- FIRST ROW -->
-
   <div class="container flex flex-col max-sm:items-center sm:flex-row gap-2 w-full justify-center">
-    <!-- FIRST WINDOW -->
-    <Window title="✨Schizodio✨" width="full">
-      <style>
-        .bliss {
-          background-image: URL("https://upload.wikimedia.org/wikipedia/en/2/27/Bliss_%28Windows_XP%29.png");
-          background-size: cover; 
-          background-position: center;
-        }
-      </style>
-      <div class="bliss w-full sm:w-96">
-        <img src={danceGif} alt="SCHIZODIO" width="auto">
-      </div>
-      <div class="flex gap-1 w-full mt-1.5">
-          <a class="w-full" href="https://x.com/schizodio"><Button>Twitter</Button></a>
-          <a class="w-full" href="https://t.me/schizodio"><Button>Telegram</Button></a>
-          <a class="w-full" href="https://app.avnu.fi/en?mode=simple&tokenFrom=0x4718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d&tokenTo=0xacc2fa3bb7f6a6726c14d9e142d51fe3984dbfa32b5907e1e76425177875e2&amount=0.001"><Button>Buy</Button></a>
-          <a class="w-full" href="https://dexscreener.com/starknet/0x00acc2fa3bb7f6a6726c14d9e142d51fe3984dbfa32b5907e1e76425177875e2-0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d-2347948331754475397897284791279200659-5982-0x0"><Button>Chart</Button></a>
-      </div>
-    </Window>
-    <div class="flex flex-col gap-2 max-w-96 w-full sm:w-64">
-      <Window title="😵schizodio.exe" width="full">
-        <div class="relative">
-          <label class="text-xs block mb-1">How schizo you are?</label>
-          <div class="flex text-xs gap-2">
-            <span>Low</span>
-            <VolumeSlider bind:value={volumeValue} steps={10} />
-            <span>High</span>
-            <span>FULL SCHIZO</span>
-            <input id="wildGlitch" type="checkbox" bind:checked={wildMode}/>
-          </div>
-        </div>
-      </Window>
-      <Window title="💿schizo.mp3" width="full">
-        <AudioPlayer audioSrc="./canttakemyeyesoffyou.mp3"/>
-      </Window>
-      <img src={schizodio_sq} alt="SCHIZODIO" width="auto" class="">
-    </div>
+    <HeroWindow bind:wildMode={wildMode}/>
   </div>
 
   <!-- CONTRACT ADDRESS -->
-
-  <div class="container flex mb-3 flex-col max-sm:items-center sm:flex-row gap-2 w-full justify-center">
-    <Window title="📄Contract Address" width="full">
-      <div class="max-sm:flex-col flex justify-center gap-2">
-        <CopyButton />
-        <p class="text-xxs sm:text-lg text-center">0x00acc2fa3bb7f6a6726c14d9e142d51fe3984dbfa32b5907e1e76425177875e2</p>
-      </div>
-    </Window>
-  </div>
+  <ContractAddress/>
 </div>
 
 </main>
