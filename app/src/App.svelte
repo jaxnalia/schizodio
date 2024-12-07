@@ -54,7 +54,7 @@
       <div class="flex gap-1 w-full mt-1.5">
           <a class="w-full" href="https://x.com/schizodio"><Button>Twitter</Button></a>
           <a class="w-full" href="https://t.me/schizodio"><Button>Telegram</Button></a>
-          <a class="w-full" href="https://app.avnu.fi/en?mode=simple&tokenFrom=0x4718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d&tokenTo=0xacc2fa3bb7f6a6726c14d9e142d51fe3984dbfa32b5907e1e76425177875e2&amount=0.001"><Button>Dex</Button></a>
+          <a class="w-full" href="https://app.avnu.fi/en?mode=simple&tokenFrom=0x4718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d&tokenTo=0xacc2fa3bb7f6a6726c14d9e142d51fe3984dbfa32b5907e1e76425177875e2&amount=0.001"><Button>Buy</Button></a>
           <a class="w-full" href="https://dexscreener.com/starknet/0x00acc2fa3bb7f6a6726c14d9e142d51fe3984dbfa32b5907e1e76425177875e2-0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d-2347948331754475397897284791279200659-5982-0x0"><Button>Chart</Button></a>
       </div>
     </Window>
