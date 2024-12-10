@@ -5,9 +5,9 @@
     import AudioPlayer from "./components/AudioPlayer.svelte";
     import danceGif from "../assets/images/dance-schizo.gif";
     import schizodio_sq from "../assets/images/schizodio_sq.jpg";
-
-    let volumeValue = 1;
-    export let wildMode: boolean;
+    import GlitchEffect from './scene/GlitchEffect.svelte';
+    let volumeValue = 0.5;
+    export let isWildGlitch = false;
 </script>
 
 <Window title="✨Schizodio✨" width="full">
@@ -44,18 +44,26 @@
     <Window title="😵glitchizodio.exe🙃" width="full">
         <div class="relative">
             <!-- svelte-ignore a11y-label-has-associated-control -->
-            <label class="text-xs block mb-1">ₕₒw ₛcₕᵢzₒ yₒᵤ ₐᵣₑ?</label>
-            <div class="flex text-xs items-center gap-2">
-                <span>ʟօա</span>
-                <VolumeSlider bind:value={volumeValue} steps={10} />
-                <span>𝐡𝐢𝐠𝐡</span>
-                <span>千ᑌᒪĻ 𝔰𝓒𝕙𝔦Ƶ๏</span>
-                <input
-                    id="wildGlitch"
-                    type="checkbox"
-                    bind:checked={wildMode}
-                />
+            <label class="text-3xl text-center block mb-1">ₕₒw ₛcₕᵢzₒ yₒᵤ ₐᵣₑ?</label>
+            <br />
+            <div class="flex-col text-xs items-center gap-2">
+                <div class="flex text-xs items-center gap-2">
+                    <span class="text-xl">ʟօա</span>
+                    <VolumeSlider bind:value={volumeValue} steps={10} />
+                    <span class="text-xl">𝐡𝐢𝐠𝐡</span>
+                </div>
+                <br />
+                <br />
+                <div class="flex-row text-2xl font-bold text-center items-center gap-2">
+                    <span>千ᑌᒪĻ𝔰𝓒𝕙𝔦Ƶ๏</span>
+                    <input
+                        id="wildGlitch"
+                        type="checkbox"
+                        bind:checked={isWildGlitch}
+                    />
+                </div>
             </div>
+
         </div>
     </Window>
     <Window title="💿schizo.mp3" width="full">
