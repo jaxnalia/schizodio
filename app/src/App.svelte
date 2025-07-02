@@ -6,12 +6,11 @@
   import schizodio_sq from "./assets/images/schizodio_sq.jpg";
   import danceGif from "./assets/images/dance-schizo.gif";
   import CopyButton from './lib/components/CopyButton.svelte';
+  // import Bliss from "./assets/images/bliss.jpg"
   import AudioPlayer from './lib/components/AudioPlayer.svelte';
   import VolumeSlider from './lib/components/VolumeSlider.svelte';
-  import GlitchEffect from './lib/components/GlitchEffect.svelte';
 
   let volumeValue = 1;
-  let wildMode = false;
 
   const menuItems = [
     { label: 'New' },
@@ -31,12 +30,8 @@
   class="static h-full sm:h-screen w-full p-5 font-windows"
   style="--win95-bg: {background}; --win95-window: {window}; --win95-text: {text}; --win95-highlight: {highlight}; --win95-highlight-text: {highlightText}; -webkit-font-smoothing: none || antialiased || subpixel-antialiased -moz-osx-font-smoothing: auto || inherit || unset || grayscale font-smoothing: auto || inherit || unset || grayscale"
 >
-<div class="fixed inset-0 z-0">
-  <GlitchEffect intensity={volumeValue} wild={wildMode} />
-</div>
-
 <!-- MAIN COLUMN -->
-<div class="gap-2 flex flex-col justify-center items-center h-full w-full relative z-10">
+<div class="gap-2 flex flex-col justify-center items-center h-full w-full">
   <div class="container flex w-full justify-center ">
     <img src={schizodio_title} alt="Schizodio" width=400px>
   </div>
@@ -71,27 +66,33 @@
             <span>Low</span>
             <VolumeSlider bind:value={volumeValue} steps={10} />
             <span>High</span>
-            <span>FULL SCHIZO</span>
-            <input id="wildGlitch" type="checkbox" bind:checked={wildMode}/>
           </div>
+          
         </div>
       </Window>
       <Window title="💿schizo.mp3" width="full">
         <AudioPlayer audioSrc="./canttakemyeyesoffyou.mp3"/>
       </Window>
       <img src={schizodio_sq} alt="SCHIZODIO" width="auto" class="">
+      <!-- <img src={danceGif} alt="SCHIZODIO" width="auto"> -->
+  
     </div>
   </div>
 
   <!-- CONTRACT ADDRESS -->
 
   <div class="container flex mb-3 flex-col max-sm:items-center sm:flex-row gap-2 w-full justify-center">
+    <!-- <img src={schizsphere} alt="SCHIZODIO" width="100"> -->
     <Window title="📄Contract Address" width="full">
       <div class="max-sm:flex-col flex justify-center gap-2">
         <CopyButton />
         <p class="text-xxs sm:text-lg text-center">0x00acc2fa3bb7f6a6726c14d9e142d51fe3984dbfa32b5907e1e76425177875e2</p>
+        
       </div>
+      
     </Window>
+  
+    
   </div>
 </div>
 
