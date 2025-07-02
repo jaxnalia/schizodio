@@ -1,33 +1,29 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import * as THREE from "three";
-  import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
-  import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
-  import { GlitchPass } from 'three/examples/jsm/postprocessing/GlitchPass.js';
+  import {
+    EffectComposer,
+    RenderPass,
+    GlitchEffect as PostGlitchEffect,
+    EffectPass,
+    BlendFunction,
+  } from "postprocessing";
 
-  export let width = window.innerWidth;
-  export let height = window.innerHeight;
+  export let intensity: number = 1;
+  export let wild: boolean = false;
 
   let container: HTMLDivElement;
   let scene: THREE.Scene;
   let camera: THREE.PerspectiveCamera;
   let renderer: THREE.WebGLRenderer;
   let composer: EffectComposer;
+  let glitchEffect: PostGlitchEffect;
 
   let object: any;
+  let light: any;
 
   onMount(() => {
-    init();
-    animate();
 
-    return () => {
-        // Cleanup
-        scene.clear()
-        renderer.dispose()
-    }
-  });
-
-  function init() {
     // Scene setup
     scene = new THREE.Scene();
     camera = new THREE.PerspectiveCamera(
@@ -36,23 +32,10 @@
       0.1,
       1000,
     );
-    camera.position.z = 5;
-
-    // Renderer setup
     renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    renderer.setSize(width, height);
-    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(container.clientWidth, container.clientHeight);
     container.appendChild(renderer.domElement);
 
-    // Lighting
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
-    scene.add(ambientLight);
-
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
-    directionalLight.position.set(1, 1, 1);
-    scene.add(directionalLight);
-    
-    // Random objects
     object = new THREE.Object3D();
     scene.add(object);
 
@@ -78,45 +61,85 @@
       object.add(mesh);
     }
 
-    // Post processing 
+    scene.add( new THREE.AmbientLight( 0xcccccc ) );
+
+				light = new THREE.DirectionalLight( 0xffffff, 3 );
+				light.position.set( 1, 1, 1 );
+				scene.add( light );
+
+    camera.position.z = 5;
+
+    // Post processing setup
     composer = new EffectComposer(renderer);
-    
     const renderPass = new RenderPass(scene, camera);
     composer.addPass(renderPass);
 
-    const glitchPass = new GlitchPass();
-    composer.addPass(glitchPass);
-  };
+    glitchEffect = new PostGlitchEffect({
+      blendFunction: BlendFunction.NORMAL,
+      chromaticAberrationOffset: new THREE.Vector2(0.01, 0.01),
+      delay: new THREE.Vector2(1.5, 3.5),
+      duration: new THREE.Vector2(0.6, 1.0),
+      strength: new THREE.Vector2(0.3, 1.0),
+      ratio: 0.85,
+    });
 
-  // Animation loop
-  function animate() {
+    const effectPass = new EffectPass(camera, glitchEffect);
+    composer.addPass(effectPass);
+
+    // Animation loop
+    const animate = () => {
       requestAnimationFrame(animate);
-      if(object) {
-        object.rotation.y += 0.005;
-      }
+      object.rotation.x += 0.005;
+      object.rotation.y += 0.01;
       composer.render();
     };
+    animate();
 
     // Handle window resize
-  function onWindowResize() {
-      width = window.innerWidth;
-      height = window.innerHeight;
-      
-      camera.aspect = width / height;
+    const handleResize = () => {
+      camera.aspect = container.clientWidth / container.clientHeight;
       camera.updateProjectionMatrix();
-      
-      renderer.setSize(width, height);composer.setSize(width, height);
-}
+      renderer.setSize(container.clientWidth, container.clientHeight);
+      composer.setSize(container.clientWidth, container.clientHeight);
+    };
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      container.removeChild(renderer.domElement);
+    };
+  });
+
+  $: if (glitchEffect) {
+    if (wild) {
+      glitchEffect.strength = new THREE.Vector2(3, 9);
+      glitchEffect.ratio = 0.95;
+      glitchEffect.chromaticAberrationOffset = new THREE.Vector2(0.1, 0.1);
+      glitchEffect.delay = new THREE.Vector2(0.1, 0.3);
+      glitchEffect.duration = new THREE.Vector2(0.2, 0.4);
+    } else {
+      // Normal intensity-based effect
+      const strengthValue = intensity * 0.3;
+      glitchEffect.strength = new THREE.Vector2(strengthValue, strengthValue * 3);
+      glitchEffect.ratio = 0.85 + intensity * 0.15;
+      glitchEffect.chromaticAberrationOffset = new THREE.Vector2(
+        0.01 + intensity * 0.02,
+        0.01 + intensity * 0.02,
+      );
+      glitchEffect.delay = new THREE.Vector2(1.5, 3.5);
+      glitchEffect.duration = new THREE.Vector2(0.6, 1.0);
+    }
+  }
 </script>
 
 <div
-    bind:this={container}
-    class="w-full h-full min-h-[200px] win95-border"
+  bind:this={container}
+  class="w-full h-full min-h-[200px] win95-border"
 ></div>
 
 <style>
-    div {
-        border-width: 2px;
-        border-style: solid;
-    }
+  div {
+    border-width: 2px;
+    border-style: solid;
+  }
 </style>
