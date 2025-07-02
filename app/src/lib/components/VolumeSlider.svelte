@@ -47,11 +47,11 @@
       width: 100%;
     }
   
-    /* .volume-icon {
+    .volume-icon {
       width: 20px;
       height: 20px;
       color: #888;
-    } */
+    }
   
     .volume-slider {
       -webkit-appearance: none;

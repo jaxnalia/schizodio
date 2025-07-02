@@ -5,7 +5,7 @@
   import Button from './Button.svelte';
   
   export let audioSrc: string;
-  // export let title = 'Audio Player';
+  export let title = 'Audio Player';
   export let autoplay = true;
   
   let audio: HTMLAudioElement;
@@ -79,7 +79,7 @@
     align-items: center;
   }
 
-  /* .audio-button {
+  .audio-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -101,5 +101,5 @@
     width: 24px;
     height: 24px;
     color: #ffffff;
-  } */
+  }
 </style>
