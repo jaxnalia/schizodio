@@ -1,5 +1,6 @@
 <script lang="ts">
      import Window from './components/Window.svelte';
+     import Button from './components/Button.svelte';
      import CopyButton from './components/CopyButton.svelte';
 </script>
 

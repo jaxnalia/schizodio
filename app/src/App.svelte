@@ -1,11 +1,16 @@
 <script lang="ts">
+  import Window from "./lib/components/Window.svelte";
+  import Button from "./lib/components/Button.svelte";
   import { currentTheme } from "./lib/stores/theme";
-  import GlitchEffect from "./lib/scene/GlitchEffect.svelte";
   import schizodio_title from "./assets/images/schizodio.png";
-  import HeroWindow from "./lib/HeroWindow.svelte";
-  import ContractAddress from "./lib/ContractAddress.svelte";
+  import CopyButton from "./lib/components/CopyButton.svelte";
+  import AudioPlayer from "./lib/components/AudioPlayer.svelte";
+  import ContractAddress from "./lib/contractaddress.svelte";
+  import HeroWindow from "./lib/herowindow.svelte";
+  import GlitchEffect from "./lib/components/GlitchEffect.svelte";
 
-  let glitchGoWild = false;
+  let wildValue = 1;
+  let wildMode = false;
 
   const menuItems = [
     { label: "New" },
@@ -22,24 +27,28 @@
 </script>
 
 <main
-  class="static h-full sm:h-screen w-full p-5 font-windows"
-  style=" --win95-window: {window}; --win95-text: {text}; --win95-highlight: {highlight}; --win95-highlight-text: {highlightText}; -webkit-font-smoothing: none || antialiased || subpixel-antialiased -moz-osx-font-smoothing: auto || inherit || unset || grayscale font-smoothing: auto || inherit || unset || grayscale"
+  class="static h-full sm:h-screen w-full p-5 font-windows p-5 font-windows"
+  style="--win95-bg: {background}; --win95-window: {window}; --win95-text: {text}; --win95-highlight: {highlight}; --win95-highlight-text: {highlightText}; -webkit-font-smoothing: none || antialiased || subpixel-antialiased -moz-osx-font-smoothing: auto || inherit || unset || grayscale font-smoothing: auto || inherit || unset || grayscale"
 >
   <div class="fixed inset-0 z-0">
-    <GlitchEffect goWild={glitchGoWild} />
+    <GlitchEffect />
   </div>
-  
-  <div class="gap-2 flex flex-col justify-center items-center h-full w-full relative z-10">
-    <!-- <div class="container flex w-full justify-center">
+  <!-- MAIN COLUMN -->
+  <div
+    class="gap-2 flex flex-col justify-center items-center h-full w-full relative z-10"
+  >
+    <div class="container flex w-full justify-center">
       <img src={schizodio_title} alt="Schizodio" width="400px" />
-    </div> -->
-
-    <div class="h-32"></div>
-  
-    <div class="container flex flex-col max-sm:items-center sm:flex-row gap-2 w-full justify-center">
-      <HeroWindow isWildGlitch={glitchGoWild}/>
     </div>
 
+    <!-- FIRST ROW -->
+    <div
+      class="container flex flex-col max-sm:items-center sm:flex-row gap-2 w-full justify-center"
+    >
+      <HeroWindow bind:wildMode />
+    </div>
+
+    <!-- CONTRACT ADDRESS -->
     <ContractAddress />
   </div>
 </main>
